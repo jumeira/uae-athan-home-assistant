@@ -1,0 +1,6 @@
+{
+  "name": "UAE Athan",
+  "country": ["AE"],
+  "render_readme": true,
+  "homeassistant": "2024.12.0"
+}

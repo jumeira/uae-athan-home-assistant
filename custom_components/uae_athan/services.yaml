@@ -1,0 +1,37 @@
+refresh:
+  name: Refresh prayer times
+  description: Fetch the latest prayer times and audio library from Jumeirapps.
+  fields:
+    config_entry_id:
+      name: UAE Athan entry
+      description: Select an entry when more than one UAE Athan area is configured.
+      selector:
+        config_entry:
+          integration: uae_athan
+
+test_prayer:
+  name: Test prayer event
+  description: Fire a test UAE Athan event now, including the selected audio URL.
+  fields:
+    config_entry_id:
+      name: UAE Athan entry
+      description: Select an entry when more than one UAE Athan area is configured.
+      selector:
+        config_entry:
+          integration: uae_athan
+    prayer_id:
+      name: Prayer
+      required: true
+      selector:
+        select:
+          options:
+            - label: Fajr
+              value: fajr
+            - label: Dhuhr
+              value: dhuhr
+            - label: Asr
+              value: asr
+            - label: Maghrib
+              value: maghrib
+            - label: Isha
+              value: isha

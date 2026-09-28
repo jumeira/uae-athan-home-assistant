@@ -1,0 +1,12 @@
+{
+  "domain": "uae_athan",
+  "name": "UAE Athan",
+  "codeowners": ["@jumeira"],
+  "config_flow": true,
+  "documentation": "https://jumeirapps.com/uae-athan/",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/jumeira/uae-athan-home-assistant/issues",
+  "requirements": [],
+  "version": "0.3.0"
+}

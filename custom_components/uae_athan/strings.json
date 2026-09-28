@@ -1,0 +1,80 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "UAE Athan",
+        "description": "Add prayer times for thirteen UAE cities and areas, then choose the Athan recordings passed to your audio-device automations.",
+        "data": {
+          "backend_url": "Jumeirapps service URL",
+          "area_id": "City or area",
+          "fajr_audio_id": "Fajr Athan recording",
+          "general_audio_id": "Other prayer recording",
+          "lookahead_days": "Upcoming days",
+          "refresh_interval_hours": "Refresh interval in hours"
+        },
+        "data_description": {
+          "backend_url": "Keep the default unless you use your own staging service.",
+          "area_id": "You can change the area later by reconfiguring the integration.",
+          "fajr_audio_id": "The selected recording URL is included in the Fajr event.",
+          "general_audio_id": "The selected recording URL is included in Dhuhr, Asr, Maghrib, and Isha events.",
+          "lookahead_days": "Upcoming times are cached so prayer events can be scheduled reliably.",
+          "refresh_interval_hours": "How often prayer times and the audio library are refreshed."
+        }
+      },
+      "reconfigure": {
+        "title": "Change city or area",
+        "description": "Select the city or area whose prayer times you want to use.",
+        "data": {
+          "area_id": "City or area"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to Jumeirapps or the selected area is unavailable.",
+      "invalid_source": "The response was rejected because its source metadata does not match the approved UAE Athan policy."
+    },
+    "abort": {
+      "already_configured": "This area is already configured.",
+      "reconfigure_successful": "The city or area was changed and the integration was reloaded."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "UAE Athan options",
+        "description": "Change the Athan recordings or refresh schedule.",
+        "data": {
+          "fajr_audio_id": "Fajr Athan recording",
+          "general_audio_id": "Other prayer recording",
+          "lookahead_days": "Upcoming days",
+          "refresh_interval_hours": "Refresh interval in hours"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to Jumeirapps or the selected area is unavailable.",
+      "invalid_source": "The response was rejected because its source metadata does not match the approved UAE Athan policy."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_prayer": { "name": "Next prayer" },
+      "next_prayer_time": { "name": "Next prayer time" },
+      "fajr_time": { "name": "Fajr time" },
+      "dhuhr_time": { "name": "Dhuhr time" },
+      "asr_time": { "name": "Asr time" },
+      "maghrib_time": { "name": "Maghrib time" },
+      "isha_time": { "name": "Isha time" }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Refresh prayer times",
+      "description": "Fetch the latest prayer times and audio library from Jumeirapps."
+    },
+    "test_prayer": {
+      "name": "Test prayer event",
+      "description": "Fire a test event now with the selected audio recording URL."
+    }
+  }
+}

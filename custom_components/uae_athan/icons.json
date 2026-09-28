@@ -1,0 +1,10 @@
+{
+  "services": {
+    "refresh": {
+      "service": "mdi:refresh"
+    },
+    "test_prayer": {
+      "service": "mdi:play-circle-outline"
+    }
+  }
+}
