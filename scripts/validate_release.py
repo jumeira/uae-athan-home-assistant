@@ -54,8 +54,8 @@ def validate_files() -> None:
     manifest = load_json(INTEGRATION / "manifest.json")
     if manifest.get("domain") != "uae_athan":
         fail("manifest domain must be uae_athan")
-    if manifest.get("version") != "0.3.0":
-        fail("manifest version must be 0.3.0")
+    if manifest.get("version") != "0.3.1":
+        fail("manifest version must be 0.3.1")
     if manifest.get("codeowners") != ["@jumeira"]:
         fail("manifest codeowners must contain @jumeira")
     if not manifest.get("issue_tracker"):

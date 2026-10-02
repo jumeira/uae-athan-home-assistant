@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 - 2026-10-02
+
+- Prepare the validated integration for inclusion in the default HACS directory.
+- No runtime behavior or prayer-time source policy changes.
+
 ## 0.3.0 - 2026-09-28
 
 - Accept the IACAD perpetual table only for Dubai City, Rural Dubai, and Hatta.
