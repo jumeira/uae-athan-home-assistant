@@ -24,6 +24,7 @@ from .const import (
     PRAYERS,
     SERVICE_REFRESH,
     SERVICE_TEST_PRAYER,
+    UAE_TIME_ZONE,
 )
 from .coordinator import UaeAthanCoordinator
 
@@ -82,7 +83,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     session = async_get_clientsession(hass)
     client = UaeAthanApiClient(session, entry.data[CONF_BACKEND_URL])
-    coordinator = UaeAthanCoordinator(hass, entry, client)
+    time_zone = await dt_util.async_get_time_zone(UAE_TIME_ZONE)
+    coordinator = UaeAthanCoordinator(hass, entry, client, time_zone)
 
     await coordinator.async_config_entry_first_refresh()
 

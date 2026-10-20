@@ -3,9 +3,8 @@
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, tzinfo
 from typing import Any
-from zoneinfo import ZoneInfo
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -25,7 +24,6 @@ from .const import (
     DOMAIN,
     PRAYER_BY_ID,
     PRAYERS,
-    UAE_TIME_ZONE,
     entry_value,
 )
 
@@ -40,10 +38,11 @@ class UaeAthanCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         hass: HomeAssistant,
         entry: ConfigEntry,
         client: UaeAthanApiClient,
+        time_zone: tzinfo,
     ) -> None:
         self.entry = entry
         self.client = client
-        self.time_zone = ZoneInfo(UAE_TIME_ZONE)
+        self.time_zone = time_zone
 
         refresh_hours = int(
             entry_value(

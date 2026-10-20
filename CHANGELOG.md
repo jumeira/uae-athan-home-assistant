@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.2 - 2026-10-20
+
+- Resolve the UAE time zone asynchronously during config-entry setup.
+- Avoid blocking Home Assistant's event loop when the integration starts.
+
 ## 0.3.1 - 2026-10-02
 
 - Prepare the validated integration for inclusion in the default HACS directory.

@@ -54,8 +54,8 @@ def validate_files() -> None:
     manifest = load_json(INTEGRATION / "manifest.json")
     if manifest.get("domain") != "uae_athan":
         fail("manifest domain must be uae_athan")
-    if manifest.get("version") != "0.3.1":
-        fail("manifest version must be 0.3.1")
+    if manifest.get("version") != "0.3.2":
+        fail("manifest version must be 0.3.2")
     if manifest.get("codeowners") != ["@jumeira"]:
         fail("manifest codeowners must contain @jumeira")
     if not manifest.get("issue_tracker"):
@@ -74,6 +74,13 @@ def validate_files() -> None:
 
     for path in sorted(INTEGRATION.glob("*.py")):
         py_compile.compile(str(path), doraise=True)
+
+    init_source = (INTEGRATION / "__init__.py").read_text(encoding="utf-8")
+    coordinator_source = (INTEGRATION / "coordinator.py").read_text(encoding="utf-8")
+    if "await dt_util.async_get_time_zone(UAE_TIME_ZONE)" not in init_source:
+        fail("time zone must be resolved asynchronously during entry setup")
+    if "ZoneInfo(" in coordinator_source:
+        fail("coordinator must not load zoneinfo on the event loop")
 
 
 def validate_live_api() -> None:
