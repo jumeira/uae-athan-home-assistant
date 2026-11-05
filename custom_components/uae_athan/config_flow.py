@@ -114,7 +114,12 @@ class UaeAthanConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             else:
                 unique_id = f"{backend_url.rstrip('/')}:{area_id}"
                 await self.async_set_unique_id(unique_id)
-                self._abort_if_unique_id_mismatch()
+                if any(
+                    config_entry.entry_id != entry.entry_id
+                    and config_entry.unique_id == unique_id
+                    for config_entry in self._async_current_entries()
+                ):
+                    return self.async_abort(reason="area_already_configured")
                 self.hass.config_entries.async_update_entry(
                     entry,
                     unique_id=unique_id,

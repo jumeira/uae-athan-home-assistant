@@ -35,6 +35,7 @@
     },
     "abort": {
       "already_configured": "هذه المنطقة مضافة مسبقاً.",
+      "area_already_configured": "المدينة أو المنطقة المختارة مضافة مسبقاً.",
       "reconfigure_successful": "تم تغيير المدينة أو المنطقة وإعادة تحميل التكامل."
     }
   },

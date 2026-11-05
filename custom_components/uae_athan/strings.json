@@ -35,6 +35,7 @@
     },
     "abort": {
       "already_configured": "This area is already configured.",
+      "area_already_configured": "The selected city or area is already configured.",
       "reconfigure_successful": "The city or area was changed and the integration was reloaded."
     }
   },

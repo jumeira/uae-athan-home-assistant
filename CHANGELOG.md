@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.3 - 2026-11-05
+
+- Allow reconfiguration to change the selected city or area.
+- Prevent selecting an area that is already used by another config entry.
+- Add localized duplicate-area messages for reconfiguration.
+
 ## 0.3.2 - 2026-10-20
 
 - Resolve the UAE time zone asynchronously during config-entry setup.
