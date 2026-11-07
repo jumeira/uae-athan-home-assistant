@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.4 - 2026-11-07
+
+- Update the next-prayer sensors immediately when each prayer event fires.
+- Lead the installation guide with the published HACS directory method.
+
 ## 0.3.3 - 2026-11-05
 
 - Allow reconfiguration to change the selected city or area.

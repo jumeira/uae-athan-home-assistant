@@ -153,6 +153,7 @@ def _make_event_callback(
             EVENT_UAE_ATHAN,
             coordinator.event_payload(day, prayer_id, due_at),
         )
+        coordinator.async_update_listeners()
 
     return _fire_event
 
